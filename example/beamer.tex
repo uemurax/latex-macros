@@ -1,0 +1,44 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage[style=authoryear-comp]{biblatex}
+
+\addbibresource{references.bib}
+
+\usetheme{user}
+
+\title{Beamer example}
+\author{Author}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}
+  \frametitle{First frame}
+  \begin{itemize}
+  \item Normal text
+  \item \alert{Alert text}
+  \item Math \(a + b = c\)
+  \end{itemize}
+  \begin{exampleblock}{Example}
+    For example, ...
+  \end{exampleblock}
+  \begin{block}{Block}
+    For block, ...
+  \end{block}
+  \begin{alertblock}{Alert}
+    For alert, ...
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Citation}
+  \Textcite{maclane1992sheaves}.
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+  \frametitle{References}
+  \printbibliography
+\end{frame}
+
+\end{document}

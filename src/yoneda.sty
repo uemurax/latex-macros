@@ -1,0 +1,19 @@
+\usepackage{amsmath}
+
+% This package provides the following commands.
+
+\DeclareMathOperator{\yonedaG}{\text{\yoneda@hira@yo@got}}
+\DeclareMathOperator{\yonedaM}{\text{\yoneda@hira@yo@min}}
+\newcommand{\yoneda}{\yonedaG}
+
+% Redefine `\yoneda` to be `yonedaM` if Mincho font is preferred.
+
+% The implementation is based on <https://tex.stackexchange.com/a/171614>.
+
+\DeclareFontFamily{U}{yoneda@font@got}{}
+\DeclareFontFamily{U}{yoneda@font@min}{}
+\DeclareFontShape{U}{yoneda@font@got}{m}{n}{<-> ipxg-r-u30}{}
+\DeclareFontShape{U}{yoneda@font@min}{m}{n}{<-> ipxm-r-u30}{}
+
+\newcommand{\yoneda@hira@yo@got}{{\usefont{U}{yoneda@font@got}{m}{n}\symbol{'210}}}
+\newcommand{\yoneda@hira@yo@min}{{\usefont{U}{yoneda@font@min}{m}{n}\symbol{'210}}}

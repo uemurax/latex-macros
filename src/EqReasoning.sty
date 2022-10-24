@@ -1,0 +1,27 @@
+% This package provides the following environment.
+
+\newenvironment{EqReasoning}{\EqReasoning@begin}{\EqReasoning@end}
+
+% Inside the environment, two commands `term` and `by` are
+% available. The intended use is like this.
+%
+%     \begin{EqReasoning}
+%       \begin{align*}
+%         & \term{x + y} \\
+%         =& \by{Commutativity} \\
+%         & \term{y + x}
+%       \end{align*}
+%     \end{EqReasoning}
+
+
+% Define commands for [this solution](https://tex.stackexchange.com/a/591463).
+
+\newcommand{\EqReasoning@term}[1]{\quad #1}
+\newcommand{\EqReasoning@by}[1]{\qquad \text{\{#1\}}}
+
+\newcommand{\EqReasoning@begin}{%
+  \let\term\EqReasoning@term
+  \let\by\EqReasoning@by
+}
+
+\newcommand{\EqReasoning@end}{\ignorespacesafterend}

@@ -1,0 +1,23 @@
+\input{cleveref-options.sty}
+\documentclass{article}
+
+\usepackage{amsthm}
+\usepackage{cleveref}
+
+\newtheorem{theorem}{Theorem}
+
+\begin{document}
+
+\begin{theorem}
+  \label{thm:all-theorems}
+  All theorems follow from this theorem.
+\end{theorem}
+
+\begin{theorem}
+  \(0 = 1\).
+\end{theorem}
+\begin{proof}
+  By \cref{thm:all-theorems}.
+\end{proof}
+
+\end{document}
